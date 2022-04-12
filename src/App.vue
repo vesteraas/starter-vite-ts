@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import TicTacToe from './components/tic-tac-toe/TicTacToe.vue';
 import {ref} from 'vue';
 
@@ -35,15 +33,17 @@ const reset = () => {
     <p v-if="winner === 'aiPlayer'">AI won!</p>
     <p v-if="winner === 'huPlayer'">Human won!</p>
   </div>
-  <tic-tac-toe difficulty="Hard" ref="board" @game-over="gameOver" @whos-turn="whosTurn"></tic-tac-toe>
+  <tic-tac-toe
+      ref="board"
+      difficulty="Hard"
+      @game-over="gameOver"
+      @whos-turn="whosTurn">
+  </tic-tac-toe>
   <p v-if="winner" @click="reset">Click to restart</p>
 </template>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  font-family: Arial;
 }
 </style>
