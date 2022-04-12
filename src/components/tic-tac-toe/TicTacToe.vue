@@ -47,13 +47,13 @@ const init = () => {
 const clicked = (event: any) => {
   if (aiPlaying) {
     return;
-  } else {
-    aiPlaying = true;
   }
 
   const pos = clickedPos(event);
 
   if (!occupied(board, pos)) {
+    aiPlaying = true;
+
     board[pos] = huPlayer;
     drawBoard(board);
 
